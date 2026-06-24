@@ -1,0 +1,13 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    DVC\ContaoCircles\:
+        resource: '../../'
+        exclude:
+            - '../../ContaoManager'
+            - '../../DependencyInjection'
+            - '../../Entity'
+            - '../../Resources'
+            - '../../Tests'

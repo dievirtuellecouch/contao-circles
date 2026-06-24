@@ -1,0 +1,35 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+  <?php if ($this->headline): ?>
+    <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>
+  <?php endif; ?>
+
+  <div class="contao-circles circle-wrapper" data-contao-circles>
+    <div class="circle-area">
+      <div class="circle-animation" data-circle-stage>
+        <?php foreach ($this->circles as $index => $circle): ?>
+          <button
+            class="circle<?= $index === 0 ? ' active' : '' ?>"
+            type="button"
+            data-key="<?= htmlspecialchars($circle['key'], ENT_QUOTES, 'UTF-8') ?>"
+          >
+            <span class="circle-label"><?= htmlspecialchars($circle['linkText'], ENT_QUOTES, 'UTF-8') ?></span>
+          </button>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <div class="text-area" aria-live="polite"></div>
+
+    <div class="content-source">
+      <?php foreach ($this->circles as $circle): ?>
+        <div data-content="<?= htmlspecialchars($circle['key'], ENT_QUOTES, 'UTF-8') ?>">
+          <?= $circle['content'] ?>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+
+<?php $this->endblock(); ?>
