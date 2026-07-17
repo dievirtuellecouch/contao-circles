@@ -2,7 +2,7 @@
     "name": "dvc/contao-circles-bundle",
     "description": "Contao content element for an editable circle animation.",
     "type": "contao-bundle",
-    "version": "4.7.0",
+    "version": "5.7.0",
     "license": "proprietary",
     "require": {
         "php": "^8.3",
